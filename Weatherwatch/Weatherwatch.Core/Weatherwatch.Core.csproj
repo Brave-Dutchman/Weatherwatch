@@ -58,6 +58,8 @@
     <Compile Include="PartialScreen.cs" />
     <Compile Include="Radar.cs" />
     <Compile Include="RadarController.cs" />
+    <Compile Include="SaveTimer.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Storage.cs" />
     <Compile Include="Warning.cs" />
     <Compile Include="WarningsController.cs" />
