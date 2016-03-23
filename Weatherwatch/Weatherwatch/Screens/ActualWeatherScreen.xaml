@@ -42,7 +42,6 @@
             <Button x:Name="ReloadRadars" Content="Radars" Grid.Row="1"/>
             <Button x:Name="ReloadWarnings" Content="Warnings" Grid.Row="2"/>
         </Grid>
-        
 
         <ComboBox x:Name="CbxWarningLocation" Grid.Column="1" HorizontalAlignment="Stretch"  VerticalAlignment="Bottom" Grid.Row="0" Grid.ColumnSpan="3"/>
         <ComboBox x:Name="ComboBox" Grid.Column="1" HorizontalAlignment="Stretch" Margin="5,5,5,0" Grid.Row="1" VerticalAlignment="Center" Grid.RowSpan="2" SelectionChanged="ComboBox_OnSelectionChanged"/>
