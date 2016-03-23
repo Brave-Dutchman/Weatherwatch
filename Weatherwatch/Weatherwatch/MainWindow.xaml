@@ -6,7 +6,25 @@
         xmlns:local="clr-namespace:Weatherwatch"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid x:Name="MainGrid">
 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.05*" MinHeight="25"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="Btn1" Content="Actueel" Grid.Column="0" Click="Button_Click"/>
+            <Button x:Name="Btn2" Content="Settings" Grid.Column="1" Click="Button_Click"/>
+            <Button x:Name="Btn3" Content="Archief" Grid.Column="2" Click="Button_Click"/>
+        </Grid>
+
+        <Grid x:Name="MainGrid" Row="1" Margin="10"/>
     </Grid>
 </Window>

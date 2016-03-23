@@ -1,4 +1,6 @@
-﻿using Weatherwatch.Core;
+﻿using System.Windows;
+using System.Windows.Controls;
+using Weatherwatch.Core;
 using Weatherwatch.Screens;
 
 namespace Weatherwatch
@@ -8,18 +10,12 @@ namespace Weatherwatch
     /// </summary>
     public partial class MainWindow
     {
-        private Screen _currentscreen;
-
         private Screen Currentscreen
         {
-            get { return _currentscreen; }
             set
             {
                 MainGrid.Children.Clear();
-
-                _currentscreen = value;
-
-                MainGrid.Children.Add(_currentscreen);
+                MainGrid.Children.Add(value);
             }
         }
 
@@ -27,6 +23,23 @@ namespace Weatherwatch
         {
             InitializeComponent();
             Currentscreen = new ActualWeatherScreen();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            switch (((FrameworkElement)sender).Name)
+            {
+                case "Btn1":
+                    Currentscreen = new ActualWeatherScreen();
+                    break;
+                case "Btn2":
+                    Currentscreen = new SettingsScreen();
+                    break;
+                case "Btn3":
+                    Currentscreen = new ArchivedWeatherScreen();
+                    break;
+
+            }
         }
     }
 }
