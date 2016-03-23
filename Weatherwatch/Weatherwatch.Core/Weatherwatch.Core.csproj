@@ -49,8 +49,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PartialScreen.cs" />
     <Compile Include="Radar.cs" />
+    <Compile Include="RadarController.cs" />
     <Compile Include="Storage.cs" />
     <Compile Include="Warning.cs" />
+    <Compile Include="WarningsController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

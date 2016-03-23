@@ -35,6 +35,16 @@ namespace Weatherwatch.Core
             _warningList.Add(warning);
         }
 
+        public List<Radar> GetRadars()
+        {
+            return _radarList;
+        }
+
+        public List<Warning> GetWarnings()
+        {
+            return _warningList;
+        }
+
         public Radar GetRadar(string name)
         {
             return _radarList.FirstOrDefault(x => x.Name == name);
