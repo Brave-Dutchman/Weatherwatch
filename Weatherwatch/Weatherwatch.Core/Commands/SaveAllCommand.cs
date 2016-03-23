@@ -1,16 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Weatherwatch.Core
+﻿namespace Weatherwatch.Core.Commands
 {
     class SaveAllCommand : Command
     {
+        private Command[] commands;
+
+        public SaveAllCommand(Command[] commands)
+        {
+            this.commands = commands;
+        }
+
         public void Execute()
         {
-            throw new NotImplementedException();
+            foreach (Command command in commands)
+            {
+                command.Execute();
+            }
         }
     }
 }
