@@ -1,4 +1,4 @@
-﻿namespace Weatherwatch.Core
+﻿namespace Weatherwatch.Core.Objects
 {
     public class Settings
     {

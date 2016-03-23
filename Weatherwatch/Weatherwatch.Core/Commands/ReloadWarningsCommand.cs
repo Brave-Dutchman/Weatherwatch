@@ -1,4 +1,5 @@
 ﻿using System;
+using Weatherwatch.Core.Controller;
 
 namespace Weatherwatch.Core.Commands
 {
@@ -6,7 +7,7 @@ namespace Weatherwatch.Core.Commands
     {
         public void Execute()
         {
-            MainController.
+           
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using Weatherwatch.Core.Controller;
 
 namespace Weatherwatch.Core
 {

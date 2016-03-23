@@ -1,4 +1,6 @@
-﻿namespace Weatherwatch.Core.Commands
+﻿using Weatherwatch.Core.Objects;
+
+namespace Weatherwatch.Core.Commands
 {
     class SaveWarningsCommand : Command
     {

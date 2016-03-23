@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Threading;
 
-namespace Weatherwatch.Core
+namespace Weatherwatch.Core.Objects
 {
     public class SaveTimer
     {

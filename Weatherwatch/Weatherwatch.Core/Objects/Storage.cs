@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Weatherwatch.Core
+namespace Weatherwatch.Core.Objects
 {
     public class Storage
     {

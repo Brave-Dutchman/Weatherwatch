@@ -47,7 +47,7 @@
   <ItemGroup>
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\NoCommand.cs" />
-    <Compile Include="MainController.cs" />
+    <Compile Include="Controller\MainController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\ReloadAllCommand.cs" />
     <Compile Include="Commands\ReloadRadarsCommand.cs" />
@@ -56,13 +56,13 @@
     <Compile Include="Commands\SaveRadarsCommand.cs" />
     <Compile Include="Commands\SaveWarningsCommand.cs" />
     <Compile Include="PartialScreen.cs" />
-    <Compile Include="Radar.cs" />
-    <Compile Include="RadarController.cs" />
-    <Compile Include="SaveTimer.cs" />
-    <Compile Include="Settings.cs" />
-    <Compile Include="Storage.cs" />
-    <Compile Include="Warning.cs" />
-    <Compile Include="WarningsController.cs" />
+    <Compile Include="Objects\Radar.cs" />
+    <Compile Include="Controller\RadarController.cs" />
+    <Compile Include="Objects\SaveTimer.cs" />
+    <Compile Include="Objects\Settings.cs" />
+    <Compile Include="Objects\Storage.cs" />
+    <Compile Include="Objects\Warning.cs" />
+    <Compile Include="Controller\WarningsController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
