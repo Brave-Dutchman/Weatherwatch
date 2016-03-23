@@ -40,7 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Command.cs" />
+    <Compile Include="NoCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReloadAllCommand.cs" />
+    <Compile Include="ReloadRadarsCommand.cs" />
+    <Compile Include="ReloadWarningsCommand.cs" />
+    <Compile Include="SaveAllCommand.cs" />
+    <Compile Include="SaveRadarsCommand.cs" />
+    <Compile Include="SaveWarningsCommand.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
