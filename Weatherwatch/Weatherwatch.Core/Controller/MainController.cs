@@ -6,16 +6,32 @@ namespace Weatherwatch.Core.Controller
 {
     public class MainController
     {
-        private WarningsController _warningsController;
-        private RadarController _radarController;
+        private readonly WarningsController _warningsController;
+        private readonly RadarController _radarController;
+
         private Command[] _commands;
 
         public MainController()
         {
             _warningsController = new WarningsController();
             _radarController = new RadarController();
+            CreateCommands();
+        }
 
-            _commands = new Command[0]; //TODO add Commands
+        private void CreateCommands()
+        {
+            ReloadRadarsCommand reloadRadarsCommand = new ReloadRadarsCommand();
+            ReloadWarningsCommand reloadWarningsCommand = new ReloadWarningsCommand();
+            ReloadAllCommand reloadAllCommand = new ReloadAllCommand(new Command[] {reloadRadarsCommand, reloadWarningsCommand});
+            SaveRadarsCommand saveRadarsCommand = new SaveRadarsCommand();
+            SaveWarningsCommand saveWarningsCommand = new SaveWarningsCommand();
+            SaveAllCommand saveAllCommand = new SaveAllCommand(new Command[] { saveRadarsCommand, saveWarningsCommand });
+
+            _commands = new Command[]
+            {
+                reloadRadarsCommand, reloadWarningsCommand, reloadAllCommand, saveRadarsCommand, saveWarningsCommand,
+                saveAllCommand
+            };
         }
 
         public List<Radar> GetRadars()
