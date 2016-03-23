@@ -9,15 +9,33 @@
              d:DesignHeight="600" d:DesignWidth="1000">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="4*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="40*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="80*"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="TimeBox" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center"/>
+        
+        <Grid Margin="5,5,5,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            
+            <TextBox x:Name="TimeBox" Height="25" TextWrapping="Wrap" Text="Time" VerticalAlignment="Top" Grid.Row="1"/>
+            <Label x:Name="LblStartTijd" Content="Starttijd:" VerticalAlignment="Bottom"/>
+            <Label x:Name="LblUur" Content="Uur" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label x:Name="LblSetInterval" Content="Set save interval" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Button x:Name="BtnSetInterval" Content="Set"  Grid.Row="1" VerticalAlignment="Bottom"/>
+            <Button x:Name="BtnStopInterval" Content="Stop" Grid.Column="1"  Grid.Row="1" VerticalAlignment="Bottom"/>
 
+        </Grid>
+        
 
 
     </Grid>
