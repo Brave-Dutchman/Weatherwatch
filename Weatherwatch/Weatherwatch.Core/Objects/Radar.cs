@@ -14,15 +14,12 @@ namespace Weatherwatch.Core.Objects
         {
             Name = name;
             _url = url;
+
+            ReloadImage();
         }
 
         public BitmapImage GetRadarImage()
         {
-            if (_radarImage == null)
-            {
-                ReloadImage();
-            }
-            
             return _radarImage;
         }
 

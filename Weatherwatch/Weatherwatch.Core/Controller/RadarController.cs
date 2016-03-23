@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Weatherwatch.Core.Objects;
 
 namespace Weatherwatch.Core.Controller
@@ -20,6 +21,11 @@ namespace Weatherwatch.Core.Controller
         public Radar GetRadar(string name)
         {
             return _storage.GetRadar(name);
+        }
+
+        public string[] GetRadarNames()
+        {
+            return GetRadars().Select(radar => radar.Name).ToArray();
         }
     }
 }

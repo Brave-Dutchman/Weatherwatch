@@ -26,7 +26,7 @@ namespace Weatherwatch
         public MainWindow()
         {
             InitializeComponent();
-            Currentscreen = new ArchivedWeatherScreen();
+            Currentscreen = new ActualWeatherScreen();
         }
     }
 }

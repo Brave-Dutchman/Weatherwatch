@@ -30,7 +30,7 @@
         <Label x:Name="ReloadLabel" Content="Reload:" Grid.Column="2" HorizontalAlignment="Left" Margin="107,10,0,0" Grid.Row="1" VerticalAlignment="Top"/>
 
         <ComboBox x:Name="CbxWarningLocation" Grid.Column="1" HorizontalAlignment="Stretch"  VerticalAlignment="Bottom" Grid.Row="0" Grid.ColumnSpan="2"/>
-        <ComboBox x:Name="ComboBox" Grid.Column="1" HorizontalAlignment="Stretch" Margin="5,0,5,0" Grid.Row="1" VerticalAlignment="Center"/>
+        <ComboBox x:Name="ComboBox" Grid.Column="1" HorizontalAlignment="Stretch" Margin="5,0,5,0" Grid.Row="1" VerticalAlignment="Center" SelectionChanged="ComboBox_OnSelectionChanged"/>
         <Label x:Name="LblSelectRadar" Content="Select radar:" Grid.Column="1" HorizontalAlignment="Stretch" Margin="5,10,5,0" Grid.Row="1" VerticalAlignment="Top"/>
     </Grid>
 </core:Screen>
