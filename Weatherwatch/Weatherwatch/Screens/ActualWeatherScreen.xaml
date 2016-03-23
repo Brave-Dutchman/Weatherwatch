@@ -6,9 +6,33 @@
              xmlns:local="clr-namespace:Weatherwatch.Screens"
              xmlns:core="clr-namespace:Weatherwatch.Core;assembly=Weatherwatch.Core"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="1000" d:DesignWidth="1000">
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="70*"/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="saveAll" Content="All" Grid.Column="2" HorizontalAlignment="Left" Width="75" RenderTransformOrigin="0.787,9.2" Margin="4,40,0,40" Grid.Row="1"/>
+        <Button x:Name="saveRadars" Content="Radars" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="4,60,0,0" Grid.Row="1"/>
+        <Button x:Name="saveWarnings" Content="Warnings" Grid.Column="2" HorizontalAlignment="Left" Margin="4,80,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
+
+        <Image x:Name="radarDisplay" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Grid.RowSpan="3"/>
+        <Label x:Name="saveLabel" Content="Save:" Grid.Column="2" HorizontalAlignment="Left" Margin="23,10,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Button x:Name="reloadAll" Content="All" Grid.Column="2" HorizontalAlignment="Left" Width="75" RenderTransformOrigin="0.787,9.2" Margin="88,40,0,40" Grid.Row="1"/>
+        <Button x:Name="reloadRadars" Content="Radars" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="88,60,0,0" Grid.Row="1"/>
+        <Button x:Name="reloadWarnings" Content="Warnings" Grid.Column="2" HorizontalAlignment="Left" Margin="88,80,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="reloadLabel" Content="Reload:" Grid.Column="2" HorizontalAlignment="Left" Margin="107,10,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+
+        <ComboBox x:Name="Cbx_WarningLocation" Grid.Column="1" HorizontalAlignment="Stretch"  VerticalAlignment="Bottom" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="comboBox" Grid.Column="1" HorizontalAlignment="Stretch" Margin="5,0,5,0" Grid.Row="1" VerticalAlignment="Center"/>
+        <Label x:Name="lbl_SelectRadar" Content="Select radar:" Grid.Column="1" HorizontalAlignment="Stretch" Margin="5,10,5,0" Grid.Row="1" VerticalAlignment="Top"/>
     </Grid>
 </core:Screen>
 
