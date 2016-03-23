@@ -6,9 +6,20 @@
              xmlns:local="clr-namespace:Weatherwatch.Screens"
              xmlns:core="clr-namespace:Weatherwatch.Core;assembly=Weatherwatch.Core"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="600" d:DesignWidth="1000">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="TimeBox" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="*"/>
+
+
+
     </Grid>
 </core:Screen>
 
