@@ -20,8 +20,8 @@ namespace Weatherwatch.Core.Controller
 
         private void CreateCommands()
         {
-            ReloadRadarsCommand reloadRadarsCommand = new ReloadRadarsCommand();
-            ReloadWarningsCommand reloadWarningsCommand = new ReloadWarningsCommand();
+            ReloadRadarsCommand reloadRadarsCommand = new ReloadRadarsCommand(_radarController);
+            ReloadWarningsCommand reloadWarningsCommand = new ReloadWarningsCommand(_warningsController);
             ReloadAllCommand reloadAllCommand = new ReloadAllCommand(new Command[] {reloadRadarsCommand, reloadWarningsCommand});
             SaveRadarsCommand saveRadarsCommand = new SaveRadarsCommand();
             SaveWarningsCommand saveWarningsCommand = new SaveWarningsCommand();
