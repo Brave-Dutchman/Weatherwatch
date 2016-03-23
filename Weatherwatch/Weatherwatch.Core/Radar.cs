@@ -25,7 +25,7 @@ namespace Weatherwatch.Core
             return null;
         }
 
-        public bool saveRadar()
+        public bool SaveRadar()
         {
             //TODO save radar
             return false;

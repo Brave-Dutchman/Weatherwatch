@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Weatherwatch.Core
+﻿namespace Weatherwatch.Core.Commands
 {
     class SaveWarningsCommand : Command
     {
         public void Execute()
         {
-            //TODO Warning.saveWarning();
-            //throw new NotImplementedException();
+            foreach (Warning warning in Storage.GetInstance().GetWarnings())
+            {
+               warning.SaveWarning();
+            }
         }
     }
 }
