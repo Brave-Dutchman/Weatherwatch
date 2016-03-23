@@ -31,9 +31,18 @@
         <Button x:Name="SaveRadars" Content="Radars" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,0,5,0" Grid.Row="2"/>
         <Button x:Name="SaveWarnings" Content="Warnings" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="5,0,5,0" Grid.Row="2" />
 
-        <Button x:Name="ReloadAll" Content="All" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="5,0,5,0" Grid.Row="2"/>
-        <Button x:Name="ReloadRadars" Content="Radars" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,0,5,0" Grid.Row="2"/>
-        <Button x:Name="ReloadWarnings" Content="Warnings" Grid.Column="3" HorizontalAlignment="Stretch" Grid.Row="2" VerticalAlignment="Bottom" Margin="5,0,5,0"/>
+        <Grid Grid.Column="3" Grid.Row="2" Margin="5,0,5,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="ReloadAll" Content="All" Grid.Row="0"/>
+            <Button x:Name="ReloadRadars" Content="Radars" Grid.Row="1"/>
+            <Button x:Name="ReloadWarnings" Content="Warnings" Grid.Row="2"/>
+        </Grid>
+        
 
         <ComboBox x:Name="CbxWarningLocation" Grid.Column="1" HorizontalAlignment="Stretch"  VerticalAlignment="Bottom" Grid.Row="0" Grid.ColumnSpan="3"/>
         <ComboBox x:Name="ComboBox" Grid.Column="1" HorizontalAlignment="Stretch" Margin="5,5,5,0" Grid.Row="1" VerticalAlignment="Center" Grid.RowSpan="2" SelectionChanged="ComboBox_OnSelectionChanged"/>
