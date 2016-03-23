@@ -63,6 +63,7 @@
     <Compile Include="Objects\Storage.cs" />
     <Compile Include="Objects\Warning.cs" />
     <Compile Include="Controller\WarningsController.cs" />
+    <Compile Include="RadarFactory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
