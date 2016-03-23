@@ -27,10 +27,20 @@
         <Label x:Name="SaveLabel" Content="Save:" Grid.Column="2" HorizontalAlignment="Stretch" Margin="5,5,5,5" Grid.Row="1" VerticalAlignment="Stretch"/>
         <Label x:Name="ReloadLabel" Content="Reload:" Grid.Column="3" HorizontalAlignment="Stretch" Grid.Row="1" Margin="5,5,5,5" VerticalAlignment="Stretch"/>
         
-        <Button x:Name="SaveAll" Content="All" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="5,0,5,0" Grid.Row="2"/>
-        <Button x:Name="SaveRadars" Content="Radars" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,0,5,0" Grid.Row="2"/>
-        <Button x:Name="SaveWarnings" Content="Warnings" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="5,0,5,0" Grid.Row="2" />
+        
+        <Grid Grid.Column="2" Grid.Row="2" Margin="5,0,5,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
+            <Button x:Name="SaveAll" Content="All"  Grid.Row="0"/>
+            <Button x:Name="SaveRadars" Content="Radars"   Grid.Row="1"/>
+            <Button x:Name="SaveWarnings" Content="Warnings" Grid.Row="2" />
+
+        </Grid>
+        
         <Grid Grid.Column="3" Grid.Row="2" Margin="5,0,5,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -42,10 +52,26 @@
             <Button x:Name="ReloadRadars" Content="Radars" Grid.Row="1"/>
             <Button x:Name="ReloadWarnings" Content="Warnings" Grid.Row="2"/>
         </Grid>
-        
 
-        <ComboBox x:Name="CbxWarningLocation" Grid.Column="1" HorizontalAlignment="Stretch"  VerticalAlignment="Bottom" Grid.Row="0" Grid.ColumnSpan="3"/>
-        <ComboBox x:Name="ComboBox" Grid.Column="1" HorizontalAlignment="Stretch" Margin="5,5,5,0" Grid.Row="1" VerticalAlignment="Center" Grid.RowSpan="2" SelectionChanged="ComboBox_OnSelectionChanged"/>
+
+
+        <Grid Grid.Column="1" Grid.ColumnSpan="3" Margin="5,5,5,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <ComboBox x:Name="CbxWarningLocation" Grid.Row="1"/>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="2" Margin="5,5,5,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <ComboBox x:Name="ComboBox" SelectionChanged="ComboBox_OnSelectionChanged"/>
+        </Grid>
+        
     </Grid>
 </core:Screen>
 
