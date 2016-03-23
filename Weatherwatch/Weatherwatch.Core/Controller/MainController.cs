@@ -34,6 +34,11 @@ namespace Weatherwatch.Core.Controller
             };
         }
 
+        public void ExecuteCommand(CommandsEnum command)
+        {
+            _commands[(int) command].Execute();
+        }
+
         public List<Radar> GetRadars()
         {
             return _radarController.GetRadars();
