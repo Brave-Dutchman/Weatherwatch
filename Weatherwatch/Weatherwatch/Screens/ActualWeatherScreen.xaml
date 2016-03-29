@@ -35,9 +35,9 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Button x:Name="SaveAll" Content="All"  Grid.Row="0"/>
-            <Button x:Name="SaveRadars" Content="Radars"   Grid.Row="1"/>
-            <Button x:Name="SaveWarnings" Content="Warnings" Grid.Row="2" />
+            <Button x:Name="SaveAll" Content="All"  Grid.Row="0" Click="SaveAll_Click"/>
+            <Button x:Name="SaveRadars" Content="Radars"   Grid.Row="1" Click="SaveRadars_Click"/>
+            <Button x:Name="SaveWarnings" Content="Warnings" Grid.Row="2" Click="SaveWarnings_Click" />
 
         </Grid>
         
@@ -48,9 +48,9 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Button x:Name="ReloadAll" Content="All" Grid.Row="0"/>
-            <Button x:Name="ReloadRadars" Content="Radars" Grid.Row="1"/>
-            <Button x:Name="ReloadWarnings" Content="Warnings" Grid.Row="2"/>
+            <Button x:Name="ReloadAll" Content="All" Grid.Row="0" Click="ReloadAll_Click"/>
+            <Button x:Name="ReloadRadars" Content="Radars" Grid.Row="1" Click="ReloadRadars_Click"/>
+            <Button x:Name="ReloadWarnings" Content="Warnings" Grid.Row="2" Click="ReloadWarnings_Click"/>
         </Grid>
 
 

@@ -10,12 +10,15 @@ namespace Weatherwatch.Core.Objects
         private readonly string _url;
         private BitmapImage _radarImage;
 
-        public Radar(string name, string url)
+        private Radar()
+        {
+            ReloadRadarImage();
+        }
+
+        public Radar(string name, string url) : this()
         {
             Name = name;
             _url = url;
-
-            ReloadImage();
         }
 
         public BitmapImage GetRadarImage()
@@ -23,7 +26,7 @@ namespace Weatherwatch.Core.Objects
             return _radarImage;
         }
 
-        public void ReloadImage()
+        public void ReloadRadarImage()
         {
             _radarImage = new BitmapImage(new Uri(_url));
         }

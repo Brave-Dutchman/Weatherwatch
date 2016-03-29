@@ -54,5 +54,13 @@ namespace Weatherwatch.Core.Objects
         {
             return _warningList.FirstOrDefault(x => x.Location == location);
         }
+
+        public void ReloadRadars()
+        {
+            foreach (Radar radar in _radarList)
+            {
+                radar.ReloadRadarImage();
+            }
+        }
     }
 }

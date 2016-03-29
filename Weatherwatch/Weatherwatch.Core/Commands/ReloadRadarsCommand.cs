@@ -14,8 +14,7 @@ namespace Weatherwatch.Core.Commands
 
         public void Execute()
         {
-            radarController.GetRadars();
-            //TODO aparte reload methode.
+            radarController.ReloadRadars();
         }
     }
 }

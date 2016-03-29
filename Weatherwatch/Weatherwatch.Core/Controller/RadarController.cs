@@ -13,6 +13,11 @@ namespace Weatherwatch.Core.Controller
             _storage = Storage.GetInstance();
         }
 
+        public void ReloadRadars()
+        {
+            _storage.ReloadRadars();
+        }
+
         public List<Radar> GetRadars()
         {
             return _storage.GetRadars();
