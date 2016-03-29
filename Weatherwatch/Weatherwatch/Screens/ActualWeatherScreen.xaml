@@ -8,69 +8,98 @@
              d:DesignHeight="600" d:DesignWidth="1000">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="8*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20*"/>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="6*"/>
-            <RowDefinition Height="20*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Image x:Name="RadarDisplay" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" />
 
-        <Label x:Name="LblSelectRadar" Content="Select radar:" Grid.Column="1" HorizontalAlignment="Stretch" Margin="5,5,5,5" Grid.Row="1" VerticalAlignment="Stretch"/>
-        <Label x:Name="SaveLabel" Content="Save:" Grid.Column="2" HorizontalAlignment="Stretch" Margin="5,5,5,5" Grid.Row="1" VerticalAlignment="Stretch"/>
-        <Label x:Name="ReloadLabel" Content="Reload:" Grid.Column="3" HorizontalAlignment="Stretch" Grid.Row="1" Margin="5,5,5,5" VerticalAlignment="Stretch"/>
-        
-        
-        <Grid Grid.Column="2" Grid.Row="2" Margin="5,0,5,0">
+        <Grid Grid.Row="0" Grid.RowSpan="17" Grid.Column="0" Grid.ColumnSpan="9">
+            <Image x:Name="RadarDisplay"/>
+        </Grid>
+
+        <Grid Column="9" ColumnSpan="3" Row="5" RowSpan="4">
             <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Button x:Name="SaveAll" Content="All"  Grid.Row="0" Click="SaveAll_Click"/>
-            <Button x:Name="SaveRadars" Content="Radars"   Grid.Row="1" Click="SaveRadars_Click"/>
-            <Button x:Name="SaveWarnings" Content="Warnings" Grid.Row="2" Click="SaveWarnings_Click"/>
+            <Grid Row="0" Margin="5">
+                <ComboBox x:Name="CbxWarningLocation"/>
+            </Grid>
+
+            <Grid Row="1" RowSpan="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label x:Name="LblSelectRadar" Grid.Column="0" Content="Select radar:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <Label x:Name="SaveLabel" Grid.Column="1" Content="Save:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <Label x:Name="ReloadLabel" Grid.Column="2" Content="Reload:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </Grid>
+
+                <Grid Grid.Row="1" Grid.RowSpan="2" Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <ComboBox x:Name="ComboBox" Grid.Row="1" SelectionChanged="ComboBox_OnSelectionChanged"/>
+
+                    <Button x:Name="SaveAll" Content="All" Grid.Row="0" Grid.Column="1" Click="SaveAll_Click"/>
+                    <Button x:Name="SaveRadars" Content="Radars" Grid.Row="1" Grid.Column="1" Click="SaveRadars_Click"/>
+                    <Button x:Name="SaveWarnings" Content="Warnings" Grid.Row="2" Grid.Column="1" Click="SaveWarnings_Click"/>
+
+                    <Button x:Name="ReloadAll" Content="All" Grid.Row="0" Grid.Column="2" Click="ReloadAll_Click"/>
+                    <Button x:Name="ReloadRadars" Content="Radars" Grid.Row="1" Grid.Column="2" Click="ReloadRadars_Click"/>
+                    <Button x:Name="ReloadWarnings" Content="Warnings" Grid.Row="2" Grid.Column="2" Click="ReloadWarnings_Click"/>
+                </Grid>
+            </Grid>
         </Grid>
-        
-        <Grid Grid.Column="3" Grid.Row="2" Margin="5,0,5,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-
-            <Button x:Name="ReloadAll" Content="All" Grid.Row="0" Click="ReloadAll_Click"/>
-            <Button x:Name="ReloadRadars" Content="Radars" Grid.Row="1" Click="ReloadRadars_Click"/>
-            <Button x:Name="ReloadWarnings" Content="Warnings" Grid.Row="2" Click="ReloadWarnings_Click"/>
-        </Grid>
-
-
-
-        <Grid Row="0" Column="1" Grid.ColumnSpan="3" Margin="5,5,5,5">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="10*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            
-            <ComboBox x:Name="CbxWarningLocation" Grid.Row="1"/>
-        </Grid>
-
-        <Grid Grid.Column="1" Grid.Row="2" Margin="5,0,5,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            
-            <ComboBox x:Name="ComboBox" Grid.Row="1" SelectionChanged="ComboBox_OnSelectionChanged"/>
-        </Grid>
-        
     </Grid>
 </core:Screen>
 

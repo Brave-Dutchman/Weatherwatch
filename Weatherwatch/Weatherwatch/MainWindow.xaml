@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Weatherwatch"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="800" Width="1000" WindowStartupLocation="CenterScreen">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -25,6 +25,6 @@
             <Button x:Name="Btn3" Content="Archief" Grid.Column="2" Click="Button_Click"/>
         </Grid>
 
-        <Grid x:Name="MainGrid" Row="1" Margin="10"/>
+        <Grid x:Name="MainGrid" Row="1" Margin="10,0,-5,10"/>
     </Grid>
 </Window>
