@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Weatherwatch.Core.Commands;
+using Weatherwatch.Core.Factory;
 using Weatherwatch.Core.Objects;
 
 namespace Weatherwatch.Core.Controller
@@ -9,25 +10,13 @@ namespace Weatherwatch.Core.Controller
         private readonly WarningsController _warningsController;
         private readonly RadarController _radarController;
 
-        private Command[] _commands;
+        private readonly ICommand[] _commands;
 
         public MainController()
         {
             _warningsController = new WarningsController();
             _radarController = new RadarController();
-            CreateCommands();
-        }
-
-        private void CreateCommands()
-        {
-            ReloadRadarsCommand reloadRadarsCommand = new ReloadRadarsCommand(_radarController);
-            ReloadWarningsCommand reloadWarningsCommand = new ReloadWarningsCommand(_warningsController);
-            ReloadAllCommand reloadAllCommand = new ReloadAllCommand(new Command[] {reloadRadarsCommand, reloadWarningsCommand});
-            SaveRadarsCommand saveRadarsCommand = new SaveRadarsCommand();
-            SaveWarningsCommand saveWarningsCommand = new SaveWarningsCommand();
-            SaveAllCommand saveAllCommand = new SaveAllCommand(new Command[] { saveRadarsCommand, saveWarningsCommand });
-
-            _commands = new Command[] { reloadRadarsCommand, reloadWarningsCommand, reloadAllCommand, saveRadarsCommand, saveWarningsCommand, saveAllCommand };
+            _commands = new CommandFactory().Create();
         }
 
         public void ExecuteCommand(CommandsEnum command)
@@ -54,7 +43,6 @@ namespace Weatherwatch.Core.Controller
         {
             return _warningsController.GetRadarNames();
         }
-
 
         public Warning GetWarning(string location)
         {

@@ -2,7 +2,7 @@
 
 namespace Weatherwatch.Core.Commands
 {
-    class SaveWarningsCommand : Command
+    class SaveWarningsCommand : ICommand
     {
         public void Execute()
         {

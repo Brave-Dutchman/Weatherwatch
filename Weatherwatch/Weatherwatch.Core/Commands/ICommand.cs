@@ -1,6 +1,6 @@
 ﻿namespace Weatherwatch.Core.Commands
 {
-    public interface Command
+    public interface ICommand
     {
         void Execute();
     }

@@ -2,7 +2,7 @@
 
 namespace Weatherwatch.Core.Factory
 {
-    public class RadarFactory : IFactory
+    public class RadarFactory
     {
         private readonly Storage _storage;
 

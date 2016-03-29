@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using Weatherwatch.Core;
 using Weatherwatch.Core.Factory;
 
 namespace Weatherwatch

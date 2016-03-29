@@ -10,11 +10,11 @@ namespace Weatherwatch.Core.Objects
 
         private readonly DispatcherTimer _startTimer;
         private readonly DispatcherTimer _saveTimer;
-        private readonly Command _command;
+        private readonly ICommand _command;
 
         public SaveTimer()
         {
-            _command = new SaveAllCommand(new Command[] {new SaveWarningsCommand(), new SaveRadarsCommand()});
+            _command = new SaveAllCommand(new ICommand[] {new SaveWarningsCommand(), new SaveRadarsCommand()});
 
             _startTimer = new DispatcherTimer();
             _saveTimer = new DispatcherTimer();

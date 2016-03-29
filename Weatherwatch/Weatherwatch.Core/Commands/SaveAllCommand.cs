@@ -1,17 +1,17 @@
 ﻿namespace Weatherwatch.Core.Commands
 {
-    class SaveAllCommand : Command
+    class SaveAllCommand : ICommand
     {
-        private Command[] commands;
+        private ICommand[] commands;
 
-        public SaveAllCommand(Command[] commands)
+        public SaveAllCommand(ICommand[] commands)
         {
             this.commands = commands;
         }
 
         public void Execute()
         {
-            foreach (Command command in commands)
+            foreach (ICommand command in commands)
             {
                 command.Execute();
             }

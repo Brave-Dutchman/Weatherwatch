@@ -2,18 +2,18 @@
 
 namespace Weatherwatch.Core.Commands
 {
-    public class ReloadAllCommand : Command
+    public class ReloadAllCommand : ICommand
     {
-        private readonly Command[] _commands;
+        private readonly ICommand[] _commands;
 
-        public ReloadAllCommand(Command[] commands)
+        public ReloadAllCommand(ICommand[] commands)
         {
             _commands = commands;
         }
 
         public void Execute()
         {
-            foreach (Command command in _commands)
+            foreach (ICommand command in _commands)
             {
                 command.Execute();
             }

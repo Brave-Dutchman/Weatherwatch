@@ -3,7 +3,7 @@ using Weatherwatch.Core.Controller;
 
 namespace Weatherwatch.Core.Commands
 {
-    class ReloadWarningsCommand : Command
+    class ReloadWarningsCommand : ICommand
     {
         private WarningsController warningsController;
 
