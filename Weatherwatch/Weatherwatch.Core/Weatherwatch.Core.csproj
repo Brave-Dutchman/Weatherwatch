@@ -49,6 +49,7 @@
     <Compile Include="Controller\CommandsEnum.cs" />
     <Compile Include="Controller\MainController.cs" />
     <Compile Include="Factory\IFactory.cs" />
+    <Compile Include="Factory\WarningsFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\ReloadAllCommand.cs" />
     <Compile Include="Commands\ReloadRadarsCommand.cs" />
