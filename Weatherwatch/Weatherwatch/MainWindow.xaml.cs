@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
 using Weatherwatch.Core;
 using Weatherwatch.Screens;
 
@@ -38,7 +37,6 @@ namespace Weatherwatch
                 case "Btn3":
                     Currentscreen = new ArchivedWeatherScreen();
                     break;
-
             }
         }
     }

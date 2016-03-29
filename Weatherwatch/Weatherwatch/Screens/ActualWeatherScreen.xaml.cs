@@ -15,6 +15,9 @@ namespace Weatherwatch.Screens
         {
             InitializeComponent();
 
+            CbxWarningLocation.ItemsSource = Controller.GetWarningNames();
+            CbxWarningLocation.SelectedItem = CbxWarningLocation.Items[0];
+
             ComboBox.ItemsSource = Controller.GetRadarNames();
             ComboBox.SelectedItem = ComboBox.Items[0];
         }

@@ -27,11 +27,7 @@ namespace Weatherwatch.Core.Controller
             SaveWarningsCommand saveWarningsCommand = new SaveWarningsCommand();
             SaveAllCommand saveAllCommand = new SaveAllCommand(new Command[] { saveRadarsCommand, saveWarningsCommand });
 
-            _commands = new Command[]
-            {
-                reloadRadarsCommand, reloadWarningsCommand, reloadAllCommand, saveRadarsCommand, saveWarningsCommand,
-                saveAllCommand
-            };
+            _commands = new Command[] { reloadRadarsCommand, reloadWarningsCommand, reloadAllCommand, saveRadarsCommand, saveWarningsCommand, saveAllCommand };
         }
 
         public void ExecuteCommand(CommandsEnum command)
@@ -53,6 +49,12 @@ namespace Weatherwatch.Core.Controller
         {
             return _radarController.GetRadarNames();
         }
+
+        public string[] GetWarningNames()
+        {
+            return _warningsController.GetRadarNames();
+        }
+
 
         public Warning GetWarning(string location)
         {
