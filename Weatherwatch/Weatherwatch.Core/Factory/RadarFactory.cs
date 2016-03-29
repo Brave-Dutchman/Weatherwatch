@@ -1,6 +1,6 @@
 ﻿using Weatherwatch.Core.Objects;
 
-namespace Weatherwatch.Core
+namespace Weatherwatch.Core.Factory
 {
     public class RadarFactory : IFactory
     {
@@ -22,10 +22,5 @@ namespace Weatherwatch.Core
             _storage.AddRadar(new Radar("temperaturemap_knmi", "http://www.knmi.nl/actueel/images/tempgmt.png"));
             _storage.AddRadar(new Radar("lightning_map_europe", "http://images.lightningmaps.org/blitzortung/europe/index.php?map=0"));
         }
-    }
-
-    public interface IFactory
-    {
-        void Create();
     }
 }

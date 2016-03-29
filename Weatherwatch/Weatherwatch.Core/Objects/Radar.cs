@@ -10,15 +10,15 @@ namespace Weatherwatch.Core.Objects
         private readonly string _url;
         private BitmapImage _radarImage;
 
-        private Radar()
+        private Radar(string url)
         {
+            _url = url;
             ReloadRadarImage();
         }
 
-        public Radar(string name, string url) : this()
+        public Radar(string name, string url) : this(url)
         {
             Name = name;
-            _url = url;
         }
 
         public BitmapImage GetRadarImage()

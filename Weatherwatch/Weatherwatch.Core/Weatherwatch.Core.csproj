@@ -48,6 +48,7 @@
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Controller\CommandsEnum.cs" />
     <Compile Include="Controller\MainController.cs" />
+    <Compile Include="Factory\IFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\ReloadAllCommand.cs" />
     <Compile Include="Commands\ReloadRadarsCommand.cs" />
@@ -63,7 +64,7 @@
     <Compile Include="Objects\Storage.cs" />
     <Compile Include="Objects\Warning.cs" />
     <Compile Include="Controller\WarningsController.cs" />
-    <Compile Include="RadarFactory.cs" />
+    <Compile Include="Factory\RadarFactory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
