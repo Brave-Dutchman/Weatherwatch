@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Weatherwatch.Core.Objects;
+﻿using Weatherwatch.Core.Objects;
 
 namespace Weatherwatch.Core.Factory
 {
-    class WarningsFactory : IFactory
+    public class WarningsFactory : IFactory
     {
         private readonly Storage _storage;
 

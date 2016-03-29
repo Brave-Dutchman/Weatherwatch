@@ -13,6 +13,12 @@ namespace Weatherwatch
         {
             RadarFactory factory = new RadarFactory();
             factory.Create();
+
+            WarningsFactory wanings = new WarningsFactory();
+            wanings.Create();
+
+            MainWindow window = new MainWindow();
+            window.Show();
         }
     }
 }
