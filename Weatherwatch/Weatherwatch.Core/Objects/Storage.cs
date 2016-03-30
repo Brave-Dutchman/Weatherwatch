@@ -42,6 +42,7 @@ namespace Weatherwatch.Core.Objects
 
         public List<Warning> GetWarnings()
         {
+            //TODO add location to getWarnings
             return _warningList;
         }
 

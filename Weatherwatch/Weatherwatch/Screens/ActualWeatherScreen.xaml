@@ -54,7 +54,7 @@
             </Grid.RowDefinitions>
 
             <Grid Row="0" Margin="5">
-                <ComboBox x:Name="CbxWarningLocation"/>
+                <ComboBox x:Name="CbxWarningLocation" SelectionChanged="CbxWarningLocation_SelectionChanged"/>
             </Grid>
 
             <Grid Row="1" RowSpan="3">
@@ -100,6 +100,7 @@
                 </Grid>
             </Grid>
         </Grid>
+        <TextBox x:Name="TbxTempWarn" Grid.ColumnSpan="3" Grid.Column="9" HorizontalAlignment="Left" Height="122" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="230" Grid.RowSpan="4"/>
     </Grid>
 </core:Screen>
 

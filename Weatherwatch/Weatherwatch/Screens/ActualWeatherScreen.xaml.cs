@@ -1,7 +1,9 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using Weatherwatch.Core.Controller;
+using Weatherwatch.Core.Objects;
 using WpfAnimatedGif;
 
 namespace Weatherwatch.Screens
@@ -27,6 +29,18 @@ namespace Weatherwatch.Screens
             string radarName = (string) e.AddedItems[0];
             BitmapImage image = Controller.GetRadar(radarName).GetRadarImage();
             ImageBehavior.SetAnimatedSource(RadarDisplay, image);
+        }
+
+        private void CbxWarningLocation_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //TODO string warningLocation = (string)e.AddedItems[0];
+            List<Warning> warningList = Controller.GetWarnings();
+            string allWarnings = "";
+            foreach (Warning warning in warningList)
+            {
+                allWarnings += warning + "\r\n";
+            }
+            TbxTempWarn.Text = allWarnings;
         }
 
         private void SaveAll_Click(object sender, RoutedEventArgs e)
