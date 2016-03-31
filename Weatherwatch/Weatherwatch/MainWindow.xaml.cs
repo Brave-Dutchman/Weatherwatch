@@ -15,6 +15,7 @@ namespace Weatherwatch
         {
             set
             {
+                value.Set();
                 MainGrid.Children.Clear();
                 MainGrid.Children.Add(value);
             }

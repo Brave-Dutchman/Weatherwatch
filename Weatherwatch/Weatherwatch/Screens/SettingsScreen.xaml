@@ -5,29 +5,22 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Weatherwatch.Screens"
              xmlns:core="clr-namespace:Weatherwatch.Core;assembly=Weatherwatch.Core"
-             mc:Ignorable="d" 
+             mc:Ignorable="d" x:Name="ThisSettings" 
              d:DesignHeight="600" d:DesignWidth="1000">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="40*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20*"/>
-            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="8*"/>
         </Grid.ColumnDefinitions>
 
         <Grid Margin="5,5,5,5">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-
-            <Label x:Name="LblSetInterval" Content="Set save interval" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-
-            <Grid Grid.Row="1" Grid.RowSpan="2">
+            <Grid>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
@@ -37,14 +30,17 @@
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBox x:Name="StartTimeBox" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0" Margin="0,2,2,2"/>
-                <TextBox x:Name="EndTimebox" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="1" Grid.Column="0" Margin="0,2,2,2"/>
-                
-                <Button x:Name="BtnSetInterval" Content="Set" Grid.Row="2" Grid.Column="0" Margin="0,2,2,2" Click="BtnSetInterval_Click"/>
-                <Button x:Name="BtnStopInterval" Content="Stop" Grid.Column="1"  Grid.Row="2" Margin="0,2,2,2" Click="BtnStopInterval_Click"/>
+                <TextBox x:Name="TxbInterval" Height="25" Text="60" Grid.Row="0" Grid.Column="0" Margin="0,2,2,2"/>
+                <TextBox x:Name="StartTimeBox" Height="25" Text="{Binding StartDate, ElementName=ThisSettings}" Grid.Row="1" Grid.Column="0" Margin="0,2,2,2"/>
+                <TextBox x:Name="EndTimebox" Height="25" Text="{Binding EndDate, ElementName=ThisSettings}" Grid.Row="2" Grid.Column="0" Margin="0,2,2,2"/>
 
-                <Label Content="Uur" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="Interval" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <Label Content="Uur" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="Uur" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+                <Button x:Name="BtnSetInterval" Content="Set" Grid.Row="3" Grid.Column="0" Margin="0,2,2,2" Click="BtnSetInterval_Click"/>
+                <Button x:Name="BtnStopInterval" Content="Stop" Grid.Column="1"  Grid.Row="3" Margin="0,2,2,2" Click="BtnStopInterval_Click"/>
+
             </Grid>
         </Grid>
     </Grid>

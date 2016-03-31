@@ -19,16 +19,15 @@ namespace Weatherwatch.Core.Objects
             }
         }
 
-
         private Settings()
         {
-            SaveInterval = 60;
             _saveTimer = new SaveTimer();
+            SaveInterval = 60;
         }
 
-        public void StarTimer()
+        public void StarTimer(DateTime start, DateTime end)
         {
-            _saveTimer.StartTimer(new DateTime(),new DateTime());
+            _saveTimer.StartTimer(start, end);
         }
 
         public void StopTimer()

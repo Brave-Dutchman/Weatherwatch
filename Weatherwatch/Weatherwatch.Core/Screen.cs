@@ -11,5 +11,10 @@ namespace Weatherwatch.Core
         {
             Controller = new MainController();
         }
+
+        public virtual void Set()
+        {
+            
+        }
     }
 }

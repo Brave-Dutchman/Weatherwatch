@@ -32,6 +32,11 @@ namespace Weatherwatch.Core.Objects
         {
             if (DateTime.Now > endTime) return false;
 
+            if (_startTimer.IsEnabled || _saveTimer.IsEnabled)
+            {
+                StopTimer();
+            }
+
             _endTime = endTime;
 
             if (startTime > DateTime.Now)
@@ -42,6 +47,7 @@ namespace Weatherwatch.Core.Objects
             else
             {
                 _saveTimer.Start();
+                _command.Execute();
             }
 
             return true;

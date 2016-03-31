@@ -64,7 +64,7 @@
     <Compile Include="Commands\SaveAllCommand.cs" />
     <Compile Include="Commands\SaveRadarsCommand.cs" />
     <Compile Include="Commands\SaveWarningsCommand.cs" />
-    <Compile Include="PartialScreen.cs" />
+    <Compile Include="Screen.cs" />
     <Compile Include="Objects\Radar.cs" />
     <Compile Include="Controller\RadarController.cs" />
     <Compile Include="Objects\SaveTimer.cs" />
