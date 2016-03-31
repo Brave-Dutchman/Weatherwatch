@@ -39,19 +39,14 @@ namespace Weatherwatch.Core.Controller
             return _radarController.GetRadarNames();
         }
 
-        public string[] GetWarningNames()
+        public string[] GetWarningLocations()
         {
-            return _warningsController.GetRadarNames();
+            return _warningsController.GetWarningLocations();
         }
 
-        public Warning GetWarning(string location)
+        public Warning[] GetWarnings(string warningLocation)
         {
-            return _warningsController.GetWarning(location);
-        }
-
-        public List<Warning> GetWarnings()
-        {
-            return _warningsController.GetWarnings();
+            return _warningsController.GetWarnings(warningLocation);
         }
     }
 }

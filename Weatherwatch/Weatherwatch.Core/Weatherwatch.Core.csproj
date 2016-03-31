@@ -55,6 +55,7 @@
     <Compile Include="Factory\CommandFactory.cs" />
     <Compile Include="Factory\WarningsFactory.cs" />
     <Compile Include="Objects\RootObject.cs" />
+    <Compile Include="Objects\WarningLocation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\ReloadAllCommand.cs" />
     <Compile Include="Commands\ReloadRadarsCommand.cs" />

@@ -5,16 +5,16 @@ namespace Weatherwatch.Core.Commands
 {
     class ReloadWarningsCommand : ICommand
     {
-        private WarningsController warningsController;
+        private readonly WarningsController _warningsController;
 
         public ReloadWarningsCommand(WarningsController warningsController)
         {
-            this.warningsController = warningsController;
+            this._warningsController = warningsController;
         }
 
         public void Execute()
         {
-           warningsController.GetWarnings();
+           //_warningsController.GetWarnings();
             //TODO aparte reload methode
         }
     }

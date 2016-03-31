@@ -6,9 +6,12 @@ namespace Weatherwatch.Core.Commands
     {
         public void Execute()
         {
-            foreach (Warning warning in Storage.GetInstance().GetWarnings())
+            foreach (WarningLocation warningLocation in Storage.GetInstance().GetWarningLocations())
             {
-               warning.SaveWarning();
+                foreach (Warning warning in warningLocation.GetWarnings())
+                {
+                    warning.SaveWarning();
+                }
             }
         }
     }

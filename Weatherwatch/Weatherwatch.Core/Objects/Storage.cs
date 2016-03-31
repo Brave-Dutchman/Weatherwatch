@@ -7,11 +7,11 @@ namespace Weatherwatch.Core.Objects
     {
         private static Storage _instance;
         private readonly List<Radar> _radarList;
-        private readonly List<Warning> _warningList;
+        private readonly List<WarningLocation> _warningList;
 
         private Storage()
         {
-            _warningList = new List<Warning>();
+            _warningList = new List<WarningLocation>();
             _radarList = new List<Radar>();
         }
 
@@ -30,7 +30,7 @@ namespace Weatherwatch.Core.Objects
             _radarList.Add(radar);
         }
 
-        public void AddWarning(Warning warning)
+        public void AddWarning(WarningLocation warning)
         {
             _warningList.Add(warning);
         }
@@ -40,9 +40,13 @@ namespace Weatherwatch.Core.Objects
             return _radarList;
         }
 
-        public List<Warning> GetWarnings()
+        public Warning[] GetWarnings(string warningLocation)
         {
-            //TODO add location to getWarnings
+           return GetWarning(warningLocation).GetWarnings();
+        }
+
+        public List<WarningLocation> GetWarningLocations()
+        {
             return _warningList;
         }
 
@@ -51,17 +55,17 @@ namespace Weatherwatch.Core.Objects
             return _radarList.FirstOrDefault(x => x.Name == name);
         }
 
-        public Warning GetWarning(string location)
-        {
-            return _warningList.FirstOrDefault(x => x.Location == location);
-        }
-
         public void ReloadRadars()
         {
             foreach (Radar radar in _radarList)
             {
                 radar.ReloadRadarImage();
             }
+        }
+
+        private WarningLocation GetWarning(string location)
+        {
+            return _warningList.FirstOrDefault(x => x.Location == location);
         }
     }
 }

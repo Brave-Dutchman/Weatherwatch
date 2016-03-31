@@ -9,12 +9,9 @@ namespace Weatherwatch.Core.Objects
         public string WarningLevel { get; private set; }
         public string StartTime { get; private set; }
         public string EndTime { get; private set; }
-        private string apiUrl;
 
-        public Warning(string location, string warningType, 
-            string warningLevel, string startTime, string endTime, string apiUrl)
+        public Warning(string location, string warningType, string warningLevel, string startTime, string endTime)
         {
-            this.apiUrl = apiUrl;
             Location = location;
             WarningType = warningType;
             WarningLevel = warningLevel;

@@ -17,7 +17,7 @@ namespace Weatherwatch.Screens
         {
             InitializeComponent();
 
-            CbxWarningLocation.ItemsSource = Controller.GetWarningNames();
+            CbxWarningLocation.ItemsSource = Controller.GetWarningLocations();
             CbxWarningLocation.SelectedItem = CbxWarningLocation.Items[0];
 
             ComboBox.ItemsSource = Controller.GetRadarNames();
@@ -33,8 +33,9 @@ namespace Weatherwatch.Screens
 
         private void CbxWarningLocation_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //TODO string warningLocation = (string)e.AddedItems[0];
-            List<Warning> warningList = Controller.GetWarnings();
+            string warningLocation = (string)e.AddedItems[0];
+
+            Warning[] warningList = Controller.GetWarnings(warningLocation);
             string allWarnings = "";
             foreach (Warning warning in warningList)
             {
