@@ -74,15 +74,7 @@ namespace Weatherwatch.Screens
 
         private void SetWarnings(string warningLocation)
         {
-            Warning[] warningList = Controller.GetWarnings(warningLocation);
-
-            string allWarnings = "";
-
-            foreach (Warning warning in warningList)
-            {
-                allWarnings += warning + "\r\n";
-            }
-            TbxTempWarn.Text = allWarnings;
+            TbxTempWarn.ItemsSource = Controller.GetWarnings(warningLocation);
         }
     }
 }
