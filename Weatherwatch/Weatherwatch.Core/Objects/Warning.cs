@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Media;
 
 namespace Weatherwatch.Core.Objects
 {
@@ -19,9 +20,12 @@ namespace Weatherwatch.Core.Objects
             EndTime = endTime;
         }
 
-        public override string ToString()
+        public SolidColorBrush Color
         {
-            return Location;
+            get
+            {
+                return new SolidColorBrush(Colors.Yellow);
+            }
         }
     }
 }

@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:core="clr-namespace:Weatherwatch.Core;assembly=Weatherwatch.Core"
+             xmlns:objects="clr-namespace:Weatherwatch.Core.Objects;assembly=Weatherwatch.Core"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1000">
     <Grid>
@@ -100,7 +101,32 @@
                 </Grid>
             </Grid>
         </Grid>
-        <TextBox x:Name="TbxTempWarn" Grid.ColumnSpan="3" Grid.Column="9" Grid.Row="1" Grid.RowSpan="4" Margin="5" TextWrapping="Wrap"/>
+        <ListBox x:Name="TbxTempWarn" Grid.ColumnSpan="3" Grid.Column="9" Grid.Row="1" Grid.RowSpan="4" Margin="5">
+            <ListBox.ItemTemplate>
+                <DataTemplate DataType="objects:Warning">
+                    <Grid Height="100">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Rectangle Grid.Column="0" Grid.RowSpan="3" Height="98" Width="98" Fill="{Binding Color}" Stroke="Black" StrokeThickness="1"/>
+
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row="0" Margin="5,0,0,0" VerticalAlignment="Center" Text="{Binding WarningType}"/>
+                            <TextBlock Grid.Row="1" Margin="5,0,0,0" VerticalAlignment="Center" Text="{Binding StartTime}"/>
+                            <TextBlock Grid.Row="2" Margin="5,0,0,0" VerticalAlignment="Center" Text="{Binding EndTime}"/>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </core:Screen>
 
