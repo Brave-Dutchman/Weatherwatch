@@ -58,13 +58,17 @@
             </Grid>
 
             <Grid Row="1" RowSpan="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="7*"/>
+                    <ColumnDefinition Width="18*"/>
+                </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Grid>
+                <Grid Grid.ColumnSpan="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -76,7 +80,7 @@
                     <Label x:Name="ReloadLabel" Grid.Column="2" Content="Reload:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 </Grid>
 
-                <Grid Grid.Row="1" Grid.RowSpan="2" Margin="5">
+                <Grid Grid.Row="1" Grid.RowSpan="2" Margin="5" Grid.ColumnSpan="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
