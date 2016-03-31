@@ -24,5 +24,15 @@ namespace Weatherwatch.Screens
         {
             InitializeComponent();
         }
+
+        private void BtnSetInterval_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnStopInterval_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

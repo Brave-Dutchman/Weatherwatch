@@ -16,28 +16,37 @@
             <ColumnDefinition Width="20*"/>
             <ColumnDefinition Width="80*"/>
         </Grid.ColumnDefinitions>
-        
+
         <Grid Margin="5,5,5,5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="2*"/>
-            </Grid.ColumnDefinitions>
-            
-            <TextBox x:Name="TimeBox" Height="25" TextWrapping="Wrap" Text="Time" VerticalAlignment="Top" Grid.Row="1"/>
-            <Label x:Name="LblStartTijd" Content="Starttijd:" VerticalAlignment="Bottom"/>
-            <Label x:Name="LblUur" Content="Uur" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
             <Label x:Name="LblSetInterval" Content="Set save interval" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Button x:Name="BtnSetInterval" Content="Set"  Grid.Row="1" VerticalAlignment="Bottom"/>
-            <Button x:Name="BtnStopInterval" Content="Stop" Grid.Column="1"  Grid.Row="1" VerticalAlignment="Bottom"/>
 
+            <Grid Grid.Row="1" Grid.RowSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox x:Name="StartTimeBox" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0" Margin="0,2,2,2"/>
+                <TextBox x:Name="EndTimebox" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="1" Grid.Column="0" Margin="0,2,2,2"/>
+                
+                <Button x:Name="BtnSetInterval" Content="Set" Grid.Row="2" Grid.Column="0" Margin="0,2,2,2" Click="BtnSetInterval_Click"/>
+                <Button x:Name="BtnStopInterval" Content="Stop" Grid.Column="1"  Grid.Row="2" Margin="0,2,2,2" Click="BtnStopInterval_Click"/>
+
+                <Label Content="Uur" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="Uur" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            </Grid>
         </Grid>
-        
-
-
     </Grid>
 </core:Screen>
 

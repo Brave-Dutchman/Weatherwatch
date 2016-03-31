@@ -17,7 +17,8 @@ namespace Weatherwatch.Core.Objects
         {
             _command = new SaveAllCommand(new ICommand[]
             {
-                new SaveWarningsCommand(new WarningsController()), new SaveRadarsCommand(new RadarController())
+                new SaveWarningsCommand(new WarningsController()),
+                new SaveRadarsCommand(  new RadarController())
             });
 
             _startTimer = new DispatcherTimer();
@@ -27,9 +28,10 @@ namespace Weatherwatch.Core.Objects
             _saveTimer.Tick += SaveTimerOnTick;
         }
         
-        public bool StartTimer(DateTime startTime, DateTime endTime, int interval)
+        public bool StartTimer(DateTime startTime, DateTime endTime)
         {
             if (DateTime.Now > endTime) return false;
+
             _endTime = endTime;
 
             if (startTime > DateTime.Now)
@@ -39,7 +41,6 @@ namespace Weatherwatch.Core.Objects
             }
             else
             {
-                _saveTimer.Interval = TimeSpan.FromMinutes(interval);
                 _saveTimer.Start();
             }
 

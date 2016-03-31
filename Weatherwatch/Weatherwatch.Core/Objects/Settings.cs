@@ -1,9 +1,11 @@
-﻿namespace Weatherwatch.Core.Objects
+﻿using System;
+
+namespace Weatherwatch.Core.Objects
 {
     public class Settings
     {
         private static Settings _instance;
-        private SaveTimer _saveTimer;
+        private readonly SaveTimer _saveTimer;
 
         private int _saveInterval;
 
@@ -12,8 +14,8 @@
             get { return _saveInterval; }
             set
             {
-                _saveInterval = value; 
-                
+                _saveInterval = value;
+                _saveTimer.SetInterval(_saveInterval);
             }
         }
 
@@ -22,6 +24,16 @@
         {
             SaveInterval = 60;
             _saveTimer = new SaveTimer();
+        }
+
+        public void StarTimer()
+        {
+            _saveTimer.StartTimer(new DateTime(),new DateTime());
+        }
+
+        public void StopTimer()
+        {
+            _saveTimer.StopTimer();
         }
 
         public static Settings GetInstance()
@@ -33,7 +45,5 @@
 
             return _instance;
         }
-
-        //TODO implement settings
     }
 }

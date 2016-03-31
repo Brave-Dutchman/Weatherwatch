@@ -9,6 +9,8 @@ namespace Weatherwatch
     /// </summary>
     public partial class MainWindow
     {
+        private readonly Screen[] screens;
+
         private Screen Currentscreen
         {
             set
@@ -21,23 +23,30 @@ namespace Weatherwatch
         public MainWindow()
         {
             InitializeComponent();
-            Currentscreen = new ActualWeatherScreen();
+
+            screens = new Screen[]
+            {
+                new ActualWeatherScreen(),
+                new SettingsScreen(),
+                new ArchivedWeatherScreen()
+            };
+
+            Currentscreen = screens[0];
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Btn_Actueel_Click(object sender, RoutedEventArgs e)
         {
-            switch (((FrameworkElement)sender).Name)
-            {
-                case "Btn1":
-                    Currentscreen = new ActualWeatherScreen();
-                    break;
-                case "Btn2":
-                    Currentscreen = new SettingsScreen();
-                    break;
-                case "Btn3":
-                    Currentscreen = new ArchivedWeatherScreen();
-                    break;
-            }
+            Currentscreen = screens[0];
+        }
+
+        private void Btn_Settings_Click(object sender, RoutedEventArgs e)
+        {
+            Currentscreen = screens[1];
+        }
+
+        private void Btn_Arhief_Click(object sender, RoutedEventArgs e)
+        {
+            Currentscreen = screens[2];
         }
     }
 }

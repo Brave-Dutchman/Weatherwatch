@@ -20,9 +20,9 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="Btn1" Content="Actueel" Grid.Column="0" Click="Button_Click"/>
-            <Button x:Name="Btn2" Content="Settings" Grid.Column="1" Click="Button_Click"/>
-            <Button x:Name="Btn3" Content="Archief" Grid.Column="2" Click="Button_Click"/>
+            <Button x:Name="Btn_Actueel" Content="Actueel" Grid.Column="0" Click="Btn_Actueel_Click"/>
+            <Button x:Name="Btn_Settings" Content="Settings" Grid.Column="1" Click="Btn_Settings_Click"/>
+            <Button x:Name="Btn_Arhief" Content="Archief" Grid.Column="2" Click="Btn_Arhief_Click"/>
         </Grid>
 
         <Grid x:Name="MainGrid" Row="1" Margin="10,0,-5,10"/>
