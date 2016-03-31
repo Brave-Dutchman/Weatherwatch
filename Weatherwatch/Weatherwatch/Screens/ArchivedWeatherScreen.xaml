@@ -69,11 +69,11 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-           <DatePicker x:Name="DatePicker" Grid.Row="1" Grid.ColumnSpan="3"/>
+            <ComboBox x:Name="CbFolderSelect" Grid.Row="1" Grid.ColumnSpan="3" VerticalAlignment="Top"/>
 
-           <ListBox x:Name="LbArchiveWarn"  Grid.Row="6" Grid.RowSpan="4" Grid.ColumnSpan="3"/>
+            <ListBox x:Name="LbArchiveWarn"  Grid.Row="5" Grid.RowSpan="4" Grid.ColumnSpan="3"/>
 
-           <ComboBox x:Name="ArchiveRadarBox" Grid.Row="4" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Top" SelectionChanged="ArchiveRadarBox_SelectionChanged"  />
+            <ComboBox x:Name="CbArchiveRadar" Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Top" SelectionChanged="ArchiveRadarBox_SelectionChanged"  />
         </Grid>
     </Grid>
 </core:Screen>
