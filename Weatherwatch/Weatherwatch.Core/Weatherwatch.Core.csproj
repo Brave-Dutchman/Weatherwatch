@@ -54,6 +54,7 @@
     <Compile Include="Controller\MainController.cs" />
     <Compile Include="Factory\CommandFactory.cs" />
     <Compile Include="Factory\WarningsFactory.cs" />
+    <Compile Include="FileStorage.cs" />
     <Compile Include="Objects\RootObject.cs" />
     <Compile Include="Objects\WarningLocation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

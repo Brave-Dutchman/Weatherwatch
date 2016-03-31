@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Net;
 using System.Windows.Media.Imaging;
 
 namespace Weatherwatch.Core.Objects
@@ -31,10 +33,15 @@ namespace Weatherwatch.Core.Objects
             _radarImage = new BitmapImage(new Uri(_url));
         }
 
-        public bool SaveRadar()
+        public bool SaveRadar(string location)
         {
-            //TODO save radar
-            return false;
+            using (WebClient client = new WebClient())
+            {
+                byte[] data = client.DownloadData(_url);
+                File.WriteAllBytes($"{location}{Name}.gif", data);
+            }
+            
+            return true;
         }
     }
 }

@@ -16,12 +16,18 @@ namespace Weatherwatch.Core.Controller
         {
             _warningsController = new WarningsController();
             _radarController = new RadarController();
+
             _commands = new CommandFactory().Create();
         }
 
         public void ExecuteCommand(CommandsEnum command)
         {
             _commands[(int) command].Execute();
+        }
+
+        public void SetSelectedWarning(string warningLocation)
+        {
+            _warningsController.SetSelectedWarning(warningLocation);
         }
 
         public List<Radar> GetRadars()

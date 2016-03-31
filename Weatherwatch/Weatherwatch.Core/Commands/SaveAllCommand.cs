@@ -2,16 +2,16 @@
 {
     class SaveAllCommand : ICommand
     {
-        private ICommand[] commands;
+        private readonly ICommand[] _commands;
 
         public SaveAllCommand(ICommand[] commands)
         {
-            this.commands = commands;
+            this._commands = commands;
         }
 
         public void Execute()
         {
-            foreach (ICommand command in commands)
+            foreach (ICommand command in _commands)
             {
                 command.Execute();
             }

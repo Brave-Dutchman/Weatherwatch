@@ -6,10 +6,6 @@ namespace Weatherwatch.Core.Controller
     public class WarningsController
     {
         private readonly Storage _storage;
-        public static string WarningType { get; private set; }
-        public static string WarningLevel { get; private set; }
-        public static string WarningStart { get; private set; }
-        public static string WarningEnd { get; private set; }
 
         public WarningsController()
         {
@@ -29,6 +25,16 @@ namespace Weatherwatch.Core.Controller
         public string[] GetWarningLocations()
         {
             return _storage.GetWarningLocations().Select(warning => warning.Location).ToArray();
+        }
+
+        public WarningLocation GetSelectedWarning()
+        {
+            return _storage.GetSelectedWarning();
+        }
+
+        public void SetSelectedWarning(string warningLocation)
+        {
+                _storage.SetSelectWarning(warningLocation);
         }
     }
 }

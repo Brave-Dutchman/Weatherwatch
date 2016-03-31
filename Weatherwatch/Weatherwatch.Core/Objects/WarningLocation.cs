@@ -7,7 +7,7 @@ namespace Weatherwatch.Core.Objects
 {
     public class WarningLocation
     {
-        public WarningLocation(string url, string location)
+        public WarningLocation(string location, string url)
         {
             Url = url;
             Location = location;

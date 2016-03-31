@@ -1,4 +1,5 @@
-﻿using Weatherwatch.Core.Objects;
+﻿using System;
+using Weatherwatch.Core.Objects;
 
 namespace Weatherwatch.Core.Commands
 {
@@ -6,9 +7,11 @@ namespace Weatherwatch.Core.Commands
     {
         public void Execute()
         {
+            string fileLocation = FileStorage.CreateFile();
+
             foreach (Radar radar in Storage.GetInstance().GetRadars())
             {
-                radar.SaveRadar();
+                radar.SaveRadar(fileLocation);
             }
         }
     }

@@ -18,11 +18,5 @@ namespace Weatherwatch.Core.Objects
             StartTime = startTime;
             EndTime = endTime;
         }
-
-        public bool SaveWarning()
-        {
-            //TODO save warning
-            return false;
-        }
     }
 }

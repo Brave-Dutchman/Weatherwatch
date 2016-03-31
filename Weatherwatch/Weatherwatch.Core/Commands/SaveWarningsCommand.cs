@@ -1,4 +1,7 @@
-﻿using Weatherwatch.Core.Objects;
+﻿using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
+using Weatherwatch.Core.Objects;
 
 namespace Weatherwatch.Core.Commands
 {
@@ -6,13 +9,10 @@ namespace Weatherwatch.Core.Commands
     {
         public void Execute()
         {
-            foreach (WarningLocation warningLocation in Storage.GetInstance().GetWarningLocations())
-            {
-                foreach (Warning warning in warningLocation.GetWarnings())
-                {
-                    warning.SaveWarning();
-                }
-            }
+            string fileLocation = FileStorage.CreateFile();
+
+            WarningLocation warningLocation = Storage.GetInstance().GetSelectedWarning();
+            File.WriteAllText($"{fileLocation}Warnings.json" ,JsonConvert.SerializeObject(warningLocation.GetWarnings()));
         }
     }
 }

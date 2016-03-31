@@ -33,7 +33,8 @@ namespace Weatherwatch.Screens
 
         private void CbxWarningLocation_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string warningLocation = (string)e.AddedItems[0];
+            string warningLocation = (string) e.AddedItems[0];
+            Controller.SetSelectedWarning(warningLocation);
 
             Warning[] warningList = Controller.GetWarnings(warningLocation);
             string allWarnings = "";

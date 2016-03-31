@@ -9,6 +9,8 @@ namespace Weatherwatch.Core.Objects
         private readonly List<Radar> _radarList;
         private readonly List<WarningLocation> _warningList;
 
+        private WarningLocation _selectedWarning;
+
         private Storage()
         {
             _warningList = new List<WarningLocation>();
@@ -35,6 +37,11 @@ namespace Weatherwatch.Core.Objects
             _warningList.Add(warning);
         }
 
+        public void SetSelectWarning(string warningLocation)
+        {
+            _selectedWarning = GetWarningLocation(warningLocation);
+        }
+
         public List<Radar> GetRadars()
         {
             return _radarList;
@@ -42,7 +49,7 @@ namespace Weatherwatch.Core.Objects
 
         public Warning[] GetWarnings(string warningLocation)
         {
-           return GetWarning(warningLocation).GetWarnings();
+           return GetWarningLocation(warningLocation).GetWarnings();
         }
 
         public List<WarningLocation> GetWarningLocations()
@@ -63,9 +70,14 @@ namespace Weatherwatch.Core.Objects
             }
         }
 
-        private WarningLocation GetWarning(string location)
+        private WarningLocation GetWarningLocation(string location)
         {
             return _warningList.FirstOrDefault(x => x.Location == location);
+        }
+
+        public WarningLocation GetSelectedWarning()
+        {
+            return _selectedWarning;
         }
     }
 }
