@@ -100,7 +100,7 @@
                 </Grid>
             </Grid>
         </Grid>
-        <TextBox x:Name="TbxTempWarn" Grid.ColumnSpan="3" Grid.Column="9" HorizontalAlignment="Left" Height="122" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="230" Grid.RowSpan="4"/>
+        <TextBox x:Name="TbxTempWarn" Grid.ColumnSpan="3" Grid.Column="9" Grid.Row="1" Grid.RowSpan="4" Margin="5" TextWrapping="Wrap"/>
     </Grid>
 </core:Screen>
 
