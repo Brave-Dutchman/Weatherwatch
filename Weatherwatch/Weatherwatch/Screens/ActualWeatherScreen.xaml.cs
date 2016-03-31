@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using Weatherwatch.Core.Controller;
@@ -33,16 +32,10 @@ namespace Weatherwatch.Screens
 
         private void CbxWarningLocation_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string warningLocation = (string) e.AddedItems[0];
+            string warningLocation = (string)e.AddedItems[0];
             Controller.SetSelectedWarning(warningLocation);
 
-            Warning[] warningList = Controller.GetWarnings(warningLocation);
-            string allWarnings = "";
-            foreach (Warning warning in warningList)
-            {
-                allWarnings += warning + "\r\n";
-            }
-            TbxTempWarn.Text = allWarnings;
+            SetWarnings(warningLocation);
         }
 
         private void SaveAll_Click(object sender, RoutedEventArgs e)
@@ -76,6 +69,20 @@ namespace Weatherwatch.Screens
         private void ReloadWarnings_Click(object sender, RoutedEventArgs e)
         {
             Controller.ExecuteCommand(CommandsEnum.ReloadWarnings);
+            SetWarnings(CbxWarningLocation.SelectedItem.ToString());
+        }
+
+        private void SetWarnings(string warningLocation)
+        {
+            Warning[] warningList = Controller.GetWarnings(warningLocation);
+
+            string allWarnings = "";
+
+            foreach (Warning warning in warningList)
+            {
+                allWarnings += warning + "\r\n";
+            }
+            TbxTempWarn.Text = allWarnings;
         }
     }
 }

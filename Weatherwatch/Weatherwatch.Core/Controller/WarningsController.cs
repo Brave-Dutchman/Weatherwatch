@@ -12,14 +12,14 @@ namespace Weatherwatch.Core.Controller
             _storage = Storage.GetInstance();
         }
 
-        public Warning[] GetWarning(string location)
-        {
-            return _storage.GetWarnings(location);
-        }
-
         public Warning[] GetWarnings(string warningLocation)
         {
             return _storage.GetWarnings(warningLocation);
+        }
+
+        public void ReloadWarnings(string warningLocation)
+        {
+            _storage.ReloadWarnings(warningLocation);
         }
 
         public string[] GetWarningLocations()
@@ -34,7 +34,7 @@ namespace Weatherwatch.Core.Controller
 
         public void SetSelectedWarning(string warningLocation)
         {
-                _storage.SetSelectWarning(warningLocation);
+            _storage.SetSelectWarning(warningLocation);
         }
     }
 }

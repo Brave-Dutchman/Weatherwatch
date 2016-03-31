@@ -28,6 +28,7 @@ namespace Weatherwatch.Core.Controller
         public void SetSelectedWarning(string warningLocation)
         {
             _warningsController.SetSelectedWarning(warningLocation);
+            _warningsController.ReloadWarnings(warningLocation);
         }
 
         public List<Radar> GetRadars()

@@ -7,19 +7,24 @@ namespace Weatherwatch.Core.Objects
 {
     public class WarningLocation
     {
+        public Warning[] Warnings { get; set; }
+        public string Url { get; set; }
+        public string Location { get; set; }
+
         public WarningLocation(string location, string url)
         {
             Url = url;
             Location = location;
         }
 
-        public string Url { get; set; }
-        public string Location { get; set; }
-
-
         public Warning[] GetWarnings()
         {
-            List<Warning> Warnings = new List<Warning>();
+            return Warnings;
+        }
+
+        public void LoadWarnings()
+        {
+            List<Warning> list = new List<Warning>();
 
             try
             {
@@ -32,13 +37,11 @@ namespace Weatherwatch.Core.Objects
                     try
                     {
                         // get the individual alerts/warnings from the JSON string.
-                        List<RootObject> warnings = new List<RootObject>();
                         RootObject objects = JsonConvert.DeserializeObject<RootObject>(warningApi);
-                        warnings.Add(objects);
                         foreach (object t in objects.alerts)
                         {
                             // get the alert/warning messages and add them to the alertBoxList.
-                            Warnings.Add(WarningMessages(t.ToString()));
+                            list.Add(WarningMessages(t.ToString()));
                         }
                     }
                     catch
@@ -52,7 +55,7 @@ namespace Weatherwatch.Core.Objects
                 Console.WriteLine("Unable to receive alerts list from Weather Underground.");
             }
 
-            return Warnings.ToArray();
+            Warnings = list.ToArray();
         }
 
         public Warning WarningMessages(string warningJson)

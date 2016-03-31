@@ -14,8 +14,7 @@ namespace Weatherwatch.Core.Commands
 
         public void Execute()
         {
-           //_warningsController.GetWarnings();
-            //TODO aparte reload methode
+            _warningsController.GetSelectedWarning().LoadWarnings();
         }
     }
 }

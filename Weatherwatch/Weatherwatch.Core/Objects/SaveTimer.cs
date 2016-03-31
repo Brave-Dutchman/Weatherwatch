@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Threading;
 using Weatherwatch.Core.Commands;
+using Weatherwatch.Core.Controller;
 
 namespace Weatherwatch.Core.Objects
 {
@@ -14,7 +15,10 @@ namespace Weatherwatch.Core.Objects
 
         public SaveTimer()
         {
-            _command = new SaveAllCommand(new ICommand[] {new SaveWarningsCommand(), new SaveRadarsCommand()});
+            _command = new SaveAllCommand(new ICommand[]
+            {
+                new SaveWarningsCommand(new WarningsController()), new SaveRadarsCommand(new RadarController())
+            });
 
             _startTimer = new DispatcherTimer();
             _saveTimer = new DispatcherTimer();

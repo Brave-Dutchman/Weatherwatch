@@ -18,5 +18,10 @@ namespace Weatherwatch.Core.Objects
             StartTime = startTime;
             EndTime = endTime;
         }
+
+        public override string ToString()
+        {
+            return Location;
+        }
     }
 }

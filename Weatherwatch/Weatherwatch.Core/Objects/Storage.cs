@@ -79,5 +79,10 @@ namespace Weatherwatch.Core.Objects
         {
             return _selectedWarning;
         }
+
+        public void ReloadWarnings(string warningLocation)
+        {
+            _selectedWarning.LoadWarnings();
+        }
     }
 }
