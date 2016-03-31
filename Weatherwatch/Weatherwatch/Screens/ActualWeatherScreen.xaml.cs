@@ -26,6 +26,7 @@ namespace Weatherwatch.Screens
         private void ComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string radarName = (string) e.AddedItems[0];
+
             BitmapImage image = Controller.GetRadar(radarName).GetRadarImage();
             ImageBehavior.SetAnimatedSource(RadarDisplay, image);
         }
@@ -63,6 +64,7 @@ namespace Weatherwatch.Screens
             Controller.ExecuteCommand(CommandsEnum.ReloadRadars);
 
             BitmapImage image = Controller.GetRadar(ComboBox.SelectedItem.ToString()).GetRadarImage();
+            ImageBehavior.SetAnimatedSource(RadarDisplay, null);
             ImageBehavior.SetAnimatedSource(RadarDisplay, image);
         }
 

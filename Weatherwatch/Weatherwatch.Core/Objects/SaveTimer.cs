@@ -79,6 +79,7 @@ namespace Weatherwatch.Core.Objects
         {
             _saveTimer.Start();
             _command.Execute();
+            _startTimer.Stop();
         }
     }
 }

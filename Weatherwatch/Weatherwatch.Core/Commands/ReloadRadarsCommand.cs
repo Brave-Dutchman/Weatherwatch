@@ -5,16 +5,16 @@ namespace Weatherwatch.Core.Commands
 {
     class ReloadRadarsCommand : ICommand
     {
-        private readonly RadarController radarController;
+        private readonly RadarController _radarController;
 
         public ReloadRadarsCommand(RadarController radarController)
         {
-            this.radarController = radarController;
+            _radarController = radarController;
         }
 
         public void Execute()
         {
-            radarController.ReloadRadars();
+            _radarController.ReloadRadars();
         }
     }
 }

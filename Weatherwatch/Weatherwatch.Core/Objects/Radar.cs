@@ -7,7 +7,7 @@ namespace Weatherwatch.Core.Objects
 {
     public class Radar
     {
-        public string Name { get; private set; }
+        public string Name { get; }
 
         private readonly string _url;
         private BitmapImage _radarImage;
@@ -30,6 +30,7 @@ namespace Weatherwatch.Core.Objects
 
         public void ReloadRadarImage()
         {
+            _radarImage = null;
             _radarImage = new BitmapImage(new Uri(_url));
         }
 
