@@ -24,5 +24,10 @@ namespace Weatherwatch.Screens
         {
             InitializeComponent();
         }
+
+        private void ArchiveRadarBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
