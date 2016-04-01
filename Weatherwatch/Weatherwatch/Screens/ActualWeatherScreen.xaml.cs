@@ -2,7 +2,6 @@
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using Weatherwatch.Core.Controller;
-using Weatherwatch.Core.Objects;
 using WpfAnimatedGif;
 
 namespace Weatherwatch.Screens
